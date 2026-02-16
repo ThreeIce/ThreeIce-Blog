@@ -32,8 +32,8 @@ export const siteConfig: SiteConfig = {
 	lang: SITE_LANG,
 
 	themeColor: {
-		hue: 60, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
-		fixed: false, // 对访问者隐藏主题色选择器
+		hue: 220, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
+		fixed: true, // 对访问者隐藏主题色选择器
 	},
 
 	// 特色页面开关配置（关闭未使用的页面有助于提升 SEO，关闭后请记得在 navbarConfig 中移除对应链接）
@@ -94,19 +94,19 @@ export const siteConfig: SiteConfig = {
 		// 注意：如果侧边栏配置启用了"both"双侧边栏，则无法使用文章列表"grid"网格（双列）布局
 		defaultMode: "list",
 		// 是否允许用户切换布局
-		allowSwitch: true,
+		allowSwitch: false,
 	},
 
 	// 标签样式配置
 	tagStyle: {
 		// 是否使用新样式（悬停高亮样式）还是旧样式（外框常亮样式）
-		useNewStyle: false,
+		useNewStyle: true,
 	},
 
 	// 壁纸模式配置
 	wallpaperMode: {
 		// 默认壁纸模式：banner=顶部横幅，fullscreen=全屏壁纸，none=无壁纸
-		defaultMode: "banner",
+		defaultMode: "none",
 		// 整体布局方案切换按钮显示设置（默认："desktop"）
 		// "off" = 不显示
 		// "mobile" = 仅在移动端显示
