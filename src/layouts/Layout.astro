@@ -111,7 +111,7 @@ if (siteConfig.generateOgImages && postSlug) {
 }
 
 const favicons: Favicon[] =
-	siteConfig.favicon.length > 0 ? siteConfig.favicon : defaultFavicons;
+	siteConfig.favicon ? siteConfig.favicon : defaultFavicons;
 
 // const siteLang = siteConfig.lang.replace('_', '-')
 if (!lang) {
@@ -247,6 +247,7 @@ if (siteConfig.font) {
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		{
+			favicons.length > 0 &&
 			favicons.map((favicon) => (
 				<link
 					rel="icon"

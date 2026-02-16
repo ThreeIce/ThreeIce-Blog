@@ -47,21 +47,23 @@ const iconSrc = rawIcon.match(/^(http|https|\/\/)/) ? rawIcon : url(rawIcon);
         <a href={url('/')} class="btn-plain scale-animation rounded-lg h-[2.5rem] md:h-[3.25rem] md:[.enable-banner_&]:h-[2.5rem] md:[.enable-banner_&]:group-[.scrolled]:h-[3.25rem] px-5 font-bold active:scale-95 shrink-0 transition-all duration-300">
             <div class="flex flex-row items-center text-md">
 				{/* 使用navbarTitle配置或默认配置 */}
-                {siteConfig.navbarTitle ? (
-                    siteConfig.navbarTitle.mode === "logo" ? (
-                        <img src={logoSrc} alt={siteConfig.navbarTitle.text} class="h-[2.5rem] md:h-[3.25rem] md:[.enable-banner_&]:h-[2.5rem] md:[.enable-banner_&]:group-[.scrolled]:h-[3.25rem] max-w-full object-contain transition-all duration-300" loading="lazy" />
-                    ) : (
-                        <>
-                            <img src={iconSrc} alt={siteConfig.navbarTitle.text} class="h-[1.75rem] w-[1.75rem] mr-2 object-contain" loading="lazy" />
-                            <span class="dark:text-white text-black">{siteConfig.navbarTitle.text}</span>
-                        </>
-                    )
-                ) : (
-                    <>
-                        <Icon name="material-symbols:home-pin-outline" class="text-[1.75rem] mr-2" />
-                        <span class="dark:text-white text-black">{siteConfig.title}</span>
-                    </>
-                )}
+				            {siteConfig.navbarTitle ? (
+				                siteConfig.navbarTitle.mode === "logo" ? (
+				                    <img src={logoSrc} alt={siteConfig.navbarTitle.text} class="h-[2.5rem] md:h-[3.25rem] md:[.enable-banner_&]:h-[2.5rem] md:[.enable-banner_&]:group-[.scrolled]:h-[3.25rem] max-w-full object-contain transition-all duration-300" loading="lazy" />
+				                ) : siteConfig.navbarTitle.mode === "text" || !siteConfig.navbarTitle.icon ? (
+				                    <span class="dark:text-white text-black">{siteConfig.navbarTitle.text}</span>
+				                ) : (
+				                    <>
+				                        <img src={iconSrc} alt={siteConfig.navbarTitle.text} class="h-[1.75rem] w-[1.75rem] mr-2 object-contain" loading="lazy" />
+				                        <span class="dark:text-white text-black">{siteConfig.navbarTitle.text}</span>
+				                    </>
+				                )
+				            ) : (
+				                <>
+				                    <Icon name="material-symbols:home-pin-outline" class="text-[1.75rem] mr-2" />
+				                    <span class="dark:text-white text-black">{siteConfig.title}</span>
+				                </>
+				            )}
             </div>
         </a>
         <div id="navbar-links-container" class="hidden md:flex items-center space-x-1 transition-opacity duration-300">

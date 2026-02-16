@@ -22,9 +22,9 @@ import { LinkPreset } from "./types/config";
 const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 const SITE_TIMEZONE = 8; //设置你的网站时区 from -12 to 12 default in UTC+8
 export const siteConfig: SiteConfig = {
-	title: "Island",
+	title: "ThreeIce Island",
 	subtitle: "ThreeIce & Sawazaki Nagi Blog",
-	siteURL: "https://https://threeice.com/", // 请替换为你的站点URL，以斜杠结尾
+	siteURL: "https://threeice.com/", // 请替换为你的站点URL，以斜杠结尾
 	siteStartDate: "2026-02-16", // 站点开始运行日期，用于站点统计组件计算运行天数
 
 	timeZone: SITE_TIMEZONE,
@@ -50,12 +50,12 @@ export const siteConfig: SiteConfig = {
 
 	// 顶栏标题配置
 	navbarTitle: {
-		// 显示模式："text-icon" 显示图标+文本，"logo" 仅显示Logo
-		mode: "text-icon",
+		// 显示模式："text-icon" 显示图标+文本，"logo" 仅显示Logo，"text" 仅显示文本
+		mode: "text",
 		// 顶栏标题文本
 		text: "ThreeIce Island",
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.png
-		icon: "assets/home/home.png",
+		// icon: "assets/home/home.png",
 		// 网站Logo图片路径
 		// logo: "assets/home/default-logo.png",
 	},
@@ -194,14 +194,7 @@ export const siteConfig: SiteConfig = {
 	},
 	showCoverInContent: true, // 在文章内容页显示文章封面
 	generateOgImages: false, // 启用生成OpenGraph图片功能,注意开启后要渲染很长时间，不建议本地调试的时候开启
-	favicon: [
-		// 留空以使用默认 favicon
-		// {
-		//   src: '/favicon/icon.png',    // 图标文件路径
-		//   theme: 'light',              // 可选，指定主题 'light' | 'dark'
-		//   sizes: '32x32',              // 可选，图标大小
-		// }
-	],
+	favicon: [], // 留空以禁用 favicon
 
 	// 字体配置
 	font: {
